@@ -1,7 +1,11 @@
 @import 'bootstrap-sprockets';
 
+// Add bootswatch for initial demo
+@import "bootswatch/flatly/variables";
+// @import "bootswatch/paper/variables";
 @import 'bootstrap';
+@import "bootswatch/flatly/bootswatch";
+// @import "bootswatch/paper/bootswatch";
 
 @import 'blacklight/blacklight';
 @import 'blacklight_marc';
-
