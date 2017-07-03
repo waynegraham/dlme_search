@@ -26,4 +26,4 @@ production:
 
 staging:
   <<: *default
-  database: db/production.sqlite3
+  database: db/staging.sqlite3

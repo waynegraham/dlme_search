@@ -71,8 +71,6 @@ group :development, :test do
   gem 'solr_wrapper', '>= 0.3'
 end
 
-gem 'solr_wrapper', '>= 0.3'
-
 gem 'rsolr', '>= 1.0'
 gem 'devise'
 gem 'devise-guests', '~> 0.6'
