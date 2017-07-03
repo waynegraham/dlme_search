@@ -21,4 +21,4 @@ production:
   url: <%= ENV['SOLR_URL'] || "http://127.0.0.1:8983/solr/blacklight-core" %>
 staging:
   adapter: solr
-  url: <%= ENV['SOLR_URL'] || "http://127.0.0.1:8080/solr/blacklight-core" %>
+  url: <%= ENV['SOLR_URL'] || "http://127.0.0.1:898/solr/blacklight-core" %>
