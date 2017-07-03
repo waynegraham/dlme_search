@@ -55,7 +55,7 @@ GEM
       rails (>= 4.2, < 6)
       rsolr (>= 1.0.6, < 3)
       twitter-typeahead-rails (= 0.11.1.pre.corejavascript)
-    blacklight-marc (6.1.1)
+    blacklight-marc (6.2.0)
       blacklight (> 6.1, < 8.a)
       library_stdnums
       marc (>= 0.4.3, < 1.1)
@@ -282,7 +282,7 @@ PLATFORMS
 DEPENDENCIES
   bcrypt_pbkdf
   blacklight (>= 6.1)
-  blacklight-marc (~> 6.1)
+  blacklight-marc (~> 6.2)
   bootswatch-rails
   byebug
   capistrano-bundler
