@@ -1,0 +1,48 @@
+@import 'https://clirdlf.github.io/logo-fonts/style.min.css';
+@import 'https://clirdlf.github.io/logo-fonts/clir-font/stylesheet.min.css';
+
+$clir-burgundy: #560319;
+//$clir-burgundy: #A50847;
+$dlf-blue:      #046BA5;
+$link_color:    #236DA3;
+
+$hc-blue:     darken($dlf-blue, 15%);
+$hc-burgundy: lighten($clir-burgundy, 15%);
+
+$dlf-blue:      #236DA3;
+$twitter-blue:  #4099FF;
+$linkedin-blue: #0177B5;
+$rss-orange:    #F17330;
+$envelope-red:  #D83232;
+
+$ndsa-blue:     #0165AE;
+
+$anchor-color: #337ab7;
+.anchor-color { color: $anchor-color; }
+
+.clir-color { color: $clir-burgundy; }
+.clir-font  { font-family: 'A028', serif; }
+
+.dlf-font   { font-family: 'Crimson Text', serif; }
+.dlf-color  { color: $dlf-blue; }
+
+.ndsa-font  { font-family: 'Open Sans', sans-serif; }
+.ndsa-color { color: $ndsa-blue; }
+
+.hidden-collections-color { color: $hc-blue; }
+
+.header-logo-size {
+  font-size: 18px;
+}
+
+.logo {
+  // font-weight: 700;
+  font-size: 22px;
+  letter-spacing: 1px;
+  margin-bottom: 0;
+}
+
+.icon-lg {}
+.icon-default {}
+.icon-sm {}
+.icon-xs {}

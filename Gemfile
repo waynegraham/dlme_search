@@ -7,6 +7,8 @@ end
 
 gem 'bootswatch-rails'
 gem 'rails-i18n'
+gem "font-awesome-rails"
+gem 'momentjs-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.4'
@@ -71,7 +73,7 @@ group :development, :test do
   gem 'solr_wrapper', '>= 0.3'
 end
 
-gem 'solr_wrapper', '>= 0.3'
+# gem 'solr_wrapper', '>= 0.3'
 
 gem 'rsolr', '>= 1.0'
 gem 'devise'
