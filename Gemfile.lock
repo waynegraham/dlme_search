@@ -286,7 +286,7 @@ PLATFORMS
 DEPENDENCIES
   bcrypt_pbkdf
   blacklight (>= 6.1)
-  blacklight-marc (~> 6.1)
+  blacklight-marc (~> 6.2)
   bootswatch-rails
   byebug
   capistrano-bundler
