@@ -31,7 +31,6 @@ en:
   elsewhere: Elsewhere
   events: Events
   colophon:
-  search: 
   activerecord:
     errors:
       messages:

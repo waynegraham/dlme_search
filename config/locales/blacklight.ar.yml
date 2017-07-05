@@ -178,11 +178,11 @@ ar:
         no_items_found: 'لا %{entry_name} وجدت'
         single_item_found: '<strong>1</strong> %{entry_name} وجدت'
         pages:
-          one: '<strong>%{start_num}</strong> - <strong>%{end_num}</strong> من <strong>%{total_num}</strong>'
-          other: '<strong>%{start_num}</strong> - <strong>%{end_num}</strong> من <strong>%{total_num}</strong>'
+          one: '<strong>%{start_num}</strong> - <strong>%{end_num}</strong> of <strong>%{total_num}</strong>'
+          other: '<strong>%{start_num}</strong> - <strong>%{end_num}</strong> of <strong>%{total_num}</strong>'
       entry_pagination_info:
-        one: '<strong>1 من 1</strong>'
-        other: '<strong>%{current}</strong> من <strong>%{total}</strong>'
+        one: '<strong>1 of 1</strong>'
+        other: '<strong>%{current}</strong> of <strong>%{total}</strong>'
       documents:
         counter: '%{counter}. '
       facets:
