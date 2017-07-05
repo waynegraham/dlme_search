@@ -21,6 +21,17 @@
 
 ---
 en:
+  dlme_text: Digital Library of the Middle East
+  copyright: All content on this site is available for re-use under
+  clir: CLIR
+  history: History
+  bookmarks: Bookmarks
+  login: Login
+  contact: Contact
+  elsewhere: Elsewhere
+  events: Events
+  colophon:
+  search: 
   activerecord:
     errors:
       messages:

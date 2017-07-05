@@ -1,3 +1,232 @@
 ar:
+  views:
+    pagination:
+      first: '&laquo; الأول'
+      last: 'الأول &raquo;'
+      previous: '&laquo; سابق'
+      next: 'التالى &raquo;'
+      truncate: '…'
+
+    pagination_compact:
+      previous: '&laquo; سابق'
+      next: 'التالى &raquo;'
+
   blacklight:
     application_name: 'المكتبة الرقمية في الشرق الأوسط'
+
+    header_links:
+      login: 'تسجيل الدخول'
+      logout: 'الخروج'
+      bookmarks: 'إرسال'
+      saved_searches: 'الابحاث المحفوظة'
+      search_history: 'التاريخ'
+
+    welcome: 'أهلا بك!'
+    and: 'و'
+    or: 'أو'
+
+    modal:
+      close: "قريب"
+
+    bookmarks:
+      title: 'إرسال'
+      page_title: 'إرسال - %{application_name}'
+      no_bookmarks: 'ليس لديك أية إشارات مرجعية'
+      add:
+        button: 'المرجعية'
+        success:
+          one: 'تمت إضافة إشارة مرجعية بنجاح.'
+          other: 'تمت إضافة الإشارات المرجعية بنجاح.'
+        failure:  'عذرا، حدثت مشكلة أثناء حفظ الإشارات.'
+      remove:
+        button: 'إزالة الإشارة المرجعية'
+        success: 'تمت إزالة الإشارة المرجعية بنجاح.'
+        failure: 'عذرا، حدثت مشكلة أثناء إزالة الإشارات المرجعية.'
+        action_confirm: 'هل تريد إزالة هذه الإشارة؟'
+      clear:
+        action_title: 'محو الإشارات المرجعية'
+        action_confirm: 'هل تريد محو الإشارات المرجعية؟'
+        success: 'مسح الإشارات المرجعية.'
+        failure: 'عذرا، حدثت مشكلة أثناء محو الإشارات المرجعية.'
+      need_login: 'الرجاء تسجيل الدخول لإدارة الإشارات المرجعية وعرضها.'
+      list_title: 'الإشارات المرجعية'
+      delete: 'إزالة'
+
+    saved_searches:
+      add:
+        success: 'تم حفظ البحث بنجاح'
+        failure: 'حدثت مشكلة أثناء حفظ البحث.'
+      remove:
+        success: 'تمت إزالة البحث المحفوظ بنجاح.'
+        failure: 'حدثت مشكلة أثناء إزالة البحث.'
+      clear:
+        action_title: 'محو عمليات البحث المحفوظة'
+        action_confirm: 'هل تريد محو عمليات البحث المحفوظة؟'
+        success: 'محو عمليات البحث المحفوظة.'
+        failure: 'حدثت مشكلة أثناء محو عمليات البحث.'
+      title: 'الابحاث المحفوظة'
+      page_title: 'الابحاث المحفوظة - %{application_name}'
+      need_login: 'الرجاء تسجيل الدخول لإدارة عمليات البحث المحفوظة وعرضها.'
+      no_searches: 'لا يوجد لديك عمليات البحث المحفوظة'
+      list_title: 'عمليات البحث المحفوظة'
+      delete: 'حذف'
+
+    search_history:
+      clear:
+        action_title: 'امسح البحث السابق'
+        action_confirm: 'هل تريد محو سجل البحث؟'
+        success: 'محو سجل البحث.'
+        failure: 'حدثت مشكلة أثناء محو سجل البحث.'
+      title: 'سجل البحث'
+      page_title: 'سجل البحث - %{application_name}'
+      no_history: 'ليس لديك سجل بحث'
+      recent: 'عمليات البحث الأخيرة'
+      forget: 'ننسى'
+      save: 'حفظ'
+
+    tools:
+      title: 'أدوات'
+      citation: 'استشهد'
+      email: 'البريد الإلكتروني'
+      sms: 'سمز هذا'
+      clear: 'واضح'
+
+    citation:
+      mla: 'MLA'
+      apa: 'APA'
+      chicago: 'Chicago'
+
+    email:
+      form:
+        title: 'Email This'
+        to: 'Email:'
+        message: 'Message:'
+        submit: 'Send'
+      text:
+        default_title: 'N/A'
+        title: 'Title: %{value}'
+        author: 'Author: %{value}'
+        format: 'Format: %{value}'
+        language: 'Language: %{value}'
+        subject:
+          one: 'Item Record: %{title}'
+          other: 'Item records'
+        url: 'URL: %{url}'
+        message: 'Message: %{message}'
+
+      success: "Email Sent"
+
+      errors:
+        to:
+          invalid: 'You must enter a valid email address'
+          blank: 'You must enter a recipient in order to send this message'
+    sms:
+      form:
+        title: 'SMS This'
+        to: 'Phone Number:'
+        carrier: 'Carrier'
+        carrier_prompt: 'Please select your carrier'
+        submit: 'Send'
+      text:
+        title: '%{value}'
+        author: ' by %{value}'
+        url: 'Link: %{url}'
+      success: "SMS Sent"
+      errors:
+        to:
+          invalid: 'You must enter a valid 10 digit phone number'
+          blank: "You must enter a recipient's phone number in order to send this message"
+        carrier:
+          blank: 'You must select a carrier'
+          invalid: "You must enter a valid carrier"
+
+    back_to_search: 'Back to Search'
+    back_to_bookmarks: 'Back to Bookmarks'
+
+    search:
+      # i18n key 'title' is deprecated and will be removed in Blacklight 6.0
+      title: '%{application_name} نتائج البحث'
+      page_title:
+        title: '%{constraints} - %{application_name} نتائج البحث'
+        constraint: '%{label}: %{value}'
+        many_constraint_values: '%{values} المحدد'
+      search_results_header: 'قيود البحث'
+      search_results: 'نتائج البحث'
+      errors:
+        request_error: "عذرا، لا أفهم بحثك."
+        invalid_solr_id: "عذرا، لقد طلبت سجلا غير موجود."
+      per_page:
+        label: '%{count}<span class="sr-only"> لكل صفحة</span>'
+        button_label: '%{count} لكل صفحة'
+        title: 'عدد النتائج المراد عرضها في كل صفحة'
+        submit: 'تحديث'
+      sort:
+        label: 'ترتيب حسب %{field}'
+        submit: 'فرز النتائج'
+      form:
+        search_field:
+          label: 'بحث في'
+          title: 'خيارات البحث المستهدفة'
+          post_label: 'إلى عن على'
+        search:
+          label: 'البحث عن'
+          placeholder: 'بحث...'
+        submit: 'بحث'
+      pagination:
+        title: 'تنقل النتائج'
+      pagination_info:
+        no_items_found: 'لا %{entry_name} وجدت'
+        single_item_found: '<strong>1</strong> %{entry_name} وجدت'
+        pages:
+          one: '<strong>%{start_num}</strong> - <strong>%{end_num}</strong> من <strong>%{total_num}</strong>'
+          other: '<strong>%{start_num}</strong> - <strong>%{end_num}</strong> من <strong>%{total_num}</strong>'
+      entry_pagination_info:
+        one: '<strong>1 من 1</strong>'
+        other: '<strong>%{current}</strong> من <strong>%{total}</strong>'
+      documents:
+        counter: '%{counter}. '
+      facets:
+        title: 'حدد البحث'
+        clear: 'مرشح واضح'
+        sort:
+          count: 'فرز عددي'
+          index: 'حسب الترتيب الأبجدي'
+        count: '%{number}'
+        more_html: 'أكثر من <span class="sr-only">%{field_name}</span> »'
+        selected:
+          remove: '[إزالة]'
+        missing: "[مفقود]"
+      group:
+        more: 'أكثر من »'
+      filters:
+        title: 'لقد بحثت عن:'
+        label: '%{label}:'
+        remove:
+          value: 'إزالة القيد %{value}'
+          label_value: 'إزالة القيد %{label}: %{value}'
+      start_over: 'ابدأ من جديد'
+      index:
+        label: '%{label}:'
+      show:
+        title: '%{document_title} - %{application_name}'
+        label: '%{label}:'
+      rss_feed: 'رسس للنتائج'
+      atom_feed: 'الذرة للنتائج'
+      bookmarks:
+        present: "في الإشارات المرجعية"
+        absent: "المرجعية"
+        inprogress: "إنقاذ..."
+      zero_results:
+        title: "لم يتم العثور على نتائج لبحثك"
+        modify_search: "جرب تعديل البحث"
+        use_fewer_keywords: "استخدم كلمات رئيسية أقل للبدء، ثم صقل البحث باستخدام الروابط الموجودة على اليمين."
+        search_fields: "لقد بحثت بواسطة %{search_fields}"
+        search_everything: "حاول البحث في كل شيء"
+      view_title: "عرض النتائج ك: "
+      view:
+        list: "قائمة"
+
+    entry_name:
+      default: 'entry'
+
+    did_you_mean: 'هل تقصد الكتابة: %{options}?'

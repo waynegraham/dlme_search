@@ -3,7 +3,7 @@
     <div class="container" role="contentinfo">
         <div class="row">
             <div class="col-md-3 col-sm-6">
-                <h5>Contact</h5>
+                <h5><%=t :contact %></h5>
                 <address>
                     CLIR+DLF<br>
                     1707 L St. NW,<br>
@@ -16,7 +16,7 @@
                 </address>
             </div>
             <div class="col-md-3 col-sm-6">
-                <h5>Elsewhere</h5>
+                <h5><%=t :elsewhere %></h5>
                 <ul class="list-unstyled">
                     <li>
                         <a href="https://twitter.com/digilibraryme">
@@ -31,7 +31,7 @@
                 </ul>
             </div>
             <div class="col-md-3 col-sm-6">
-                <h5>Upcoming Events</h5>
+                <h5><%=t :events %></h5>
                 <div id="calendar">
                     <ul class="list-unstyled" id="upcoming-events"></ul>
                 </div>
@@ -46,13 +46,13 @@
             <div class="col-md-12">
                 <div class="footer-alt">
                     <p class="pull-right">
-                        All content on this site is available for re-use under
+                      <%=t :copyright %>
                         <%= link_to 'CC BY-SA 4.0 License', 'https://creativecommons.org/licenses/by-sa/4.0/legalcode' %>
                     </p>
                     <p class="logo">
                         <a href="https://www.clir.org/">
                             <i class="icon-clir-logo-square clir-color"></i>
-                            <span class="clir clir-font">CLIR</span>
+                            <span class="clir clir-font"><%= t :clir %></span>
                         </a>
                     </p>
                 </div>

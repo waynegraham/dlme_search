@@ -1,5 +1,16 @@
 ---
 ar:
+  dlme_text: المكتبة الرقمية في الشرق الأوسط
+  copyright: جميع محتويات هذا الموقع متاحة لإعادة استخدامها تحت
+  clir: مجلس المكتبات وموارد المعلومات
+  history: التاريخ
+  bookmarks: إرسال
+  login: تسجيل الدخول
+  contact: اتصل
+  elsewhere: في مكان آخر
+  events: أحداث
+  search: 
+  colophon:
   activerecord:
     errors:
       messages:
