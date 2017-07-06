@@ -103,6 +103,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'cho_title_vern_display_tsim', label: 'Title'
     config.add_show_field 'agg_is_shown_at_tsim', label: 'Is Shown At', helper_method: :linkify
     config.add_show_field 'agg_provider_tsim', label: 'Provider'
+    config.add_show_field 'agg_data_provider_tsim', label: 'Originating Institution'
     config.add_show_field 'cho_alternate_tsim', label: 'Alternate Title', helper_method: :linebreak_separator
     config.add_show_field 'cho_subtitle_display', label: 'Alternate Title', helper_method: :linebreak_separator
     config.add_show_field 'cho_creator_display_tsim', label: 'Creator', helper_method: :linebreak_separator
