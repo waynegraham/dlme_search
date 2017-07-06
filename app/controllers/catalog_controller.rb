@@ -38,8 +38,8 @@ class CatalogController < ApplicationController
     #}
 
     # solr field configuration for search results/index views
-    config.index.title_field = 'title_display'
-    config.index.display_type_field = 'format'
+    config.index.title_field = 'cho_title_display_tsim'
+    config.index.display_type_field = 'cho_format_tsim'
     #config.index.thumbnail_field = 'thumbnail_path_ss'
 
     # solr field configuration for document/show views
@@ -71,22 +71,15 @@ class CatalogController < ApplicationController
     #  (useful when user clicks "more" on a large facet and wants to navigate alphabetically across a large set of results)
     # :index_range can be an array or range of prefixes that will be used to create the navigation (note: It is case sensitive when searching values)
 
-    config.add_facet_field 'format', label: 'Format'
-    config.add_facet_field 'pub_date', label: 'Publication Year', single: true
+    config.add_facet_field 'agg_provider_sim', label: 'Provider'
+    config.add_facet_field 'author_display_sim', label: 'Creator/Contributor'
+    config.add_facet_field 'cho_format_sim', label: 'Format'
+    config.add_facet_field 'cho_has_type_sim', label: 'Genre'
+    config.add_facet_field 'cho_date_sim', label: 'Publication Year', single: true
     config.add_facet_field 'subject_topic_facet', label: 'Topic', limit: 20, index_range: 'A'..'Z'
-    config.add_facet_field 'language_facet', label: 'Language', limit: true
-    config.add_facet_field 'lc_1letter_facet', label: 'Call Number'
-    config.add_facet_field 'subject_geo_facet', label: 'Region'
-    config.add_facet_field 'subject_era_facet', label: 'Era'
-
-    config.add_facet_field 'example_pivot_field', label: 'Pivot Field', :pivot => ['format', 'language_facet']
-
-    config.add_facet_field 'example_query_facet_field', label: 'Publish Date', :query => {
-       :years_5 => { label: 'within 5 Years', fq: "pub_date:[#{Time.zone.now.year - 5 } TO *]" },
-       :years_10 => { label: 'within 10 Years', fq: "pub_date:[#{Time.zone.now.year - 10 } TO *]" },
-       :years_25 => { label: 'within 25 Years', fq: "pub_date:[#{Time.zone.now.year - 25 } TO *]" }
-    }
-
+    config.add_facet_field 'cho_language_facet', label: 'Language', limit: true
+    config.add_facet_field 'cho_temporal_sim', label: 'Era'
+    config.add_facet_field 'cho_spatial_sim', label: 'Place'
 
     # Have BL send all facet field names to Solr, which has been the default
     # previously. Simply remove these lines if you'd rather use Solr request
@@ -95,32 +88,38 @@ class CatalogController < ApplicationController
 
     # solr fields to be displayed in the index (search results) view
     #   The ordering of the field names is the order of the display
-    config.add_index_field 'title_display', label: 'Title'
-    config.add_index_field 'title_vern_display', label: 'Title'
-    config.add_index_field 'author_display', label: 'Author'
-    config.add_index_field 'author_vern_display', label: 'Author'
-    config.add_index_field 'format', label: 'Format'
-    config.add_index_field 'language_facet', label: 'Language'
-    config.add_index_field 'published_display', label: 'Published'
-    config.add_index_field 'published_vern_display', label: 'Published'
-    config.add_index_field 'lc_callnum_display', label: 'Call number'
+    config.add_index_field 'cho_title_display_tsim', label: 'Title'
+    config.add_index_field 'cho_title_vern_display_tsim', label: 'Title'
+    config.add_index_field 'cho_creator_display_tsim', label: 'Creator'
+    config.add_index_field 'cho_creator_vern_display_tsim', label: 'Creator'
+    config.add_index_field 'agg_provider_tsim', label: 'Provider'
+    config.add_index_field 'cho_format_tsim', label: 'Format'
+    config.add_index_field 'cho_language_tsim', label: 'Language'
+    config.add_index_field 'cho_date_display_tsim', label: 'Date'
 
     # solr fields to be displayed in the show (single result) view
     #   The ordering of the field names is the order of the display
-    config.add_show_field 'title_display', label: 'Title'
-    config.add_show_field 'title_vern_display', label: 'Title'
-    config.add_show_field 'subtitle_display', label: 'Subtitle'
-    config.add_show_field 'subtitle_vern_display', label: 'Subtitle'
-    config.add_show_field 'author_display', label: 'Author'
-    config.add_show_field 'author_vern_display', label: 'Author'
-    config.add_show_field 'format', label: 'Format'
-    config.add_show_field 'url_fulltext_display', label: 'URL'
-    config.add_show_field 'url_suppl_display', label: 'More Information'
-    config.add_show_field 'language_facet', label: 'Language'
-    config.add_show_field 'published_display', label: 'Published'
-    config.add_show_field 'published_vern_display', label: 'Published'
-    config.add_show_field 'lc_callnum_display', label: 'Call number'
-    config.add_show_field 'isbn_t', label: 'ISBN'
+    config.add_show_field 'cho_title_display_tsim', label: 'Title'
+    config.add_show_field 'cho_title_vern_display_tsim', label: 'Title'
+    config.add_show_field 'agg_is_shown_at_tsim', label: 'Is Shown At', helper_method: :linkify
+    config.add_show_field 'agg_provider_tsim', label: 'Provider'
+    config.add_show_field 'agg_data_provider_tsim', label: 'Originating Institution'
+    config.add_show_field 'cho_alternate_tsim', label: 'Alternate Title', helper_method: :linebreak_separator
+    config.add_show_field 'cho_subtitle_display', label: 'Alternate Title', helper_method: :linebreak_separator
+    config.add_show_field 'cho_creator_display_tsim', label: 'Creator', helper_method: :linebreak_separator
+    config.add_show_field 'cho_creator_vern_display_tsim', label: 'Creator', helper_method: :linebreak_separator
+    config.add_show_field 'cho_contributor_display_tsim', label: 'Contributor', helper_method: :linebreak_separator
+    config.add_show_field 'cho_contributor_vern_display_tsim', label: 'Contributor', helper_method: :linebreak_separator
+    config.add_show_field 'cho_date_display_tsim', label: 'Date'
+    config.add_show_field 'cho_publisher_display_tsim', label: 'Publisher', helper_method: :linebreak_separator
+    config.add_show_field 'cho_publisher_vern_display_tsim', label: 'Publisher', helper_method: :linebreak_separator
+    config.add_show_field 'cho_language_tsim', label: 'Language'
+    config.add_show_field 'cho_extent_tsim', label: 'Extent'
+    config.add_show_field 'cho_format_tsim', label: 'Format'
+    config.add_show_field 'cho_description_tsim', label: 'Description', helper_method: :linebreak_separator
+    config.add_show_field 'cho_provenance_tsim', label: 'Provenance', helper_method: :linebreak_separator
+    config.add_show_field 'cho_is_part_of_tsim', label: 'Is Part Of'
+
 
     # "fielded" search configuration. Used by pulldown among other places.
     # For supported keys in hash, see rdoc for Blacklight::SearchFields
