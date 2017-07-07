@@ -25,10 +25,10 @@ namespace :solr do
               doc[:agg_data_provider_tsim] = doc[:agg_data_provider_sim]
               isa = record[:object][:aggregations].first[:edmIsShownAt]
               doc[:agg_is_shown_at_tsim] = CGI::parse(URI(isa).query)["shownAt"].first if !isa.nil?
-              doc[:agg_preview_tsim] = record[:object][:europeanaAggregation][:edmPreview]
+              doc[:agg_preview_tsi] = record[:object][:europeanaAggregation][:edmPreview]
 
               proxy = record[:object][:proxies].first
-              doc[:cho_creator_tsim] = proxy[:dcCreator][:def]
+              doc[:cho_creator_tsim] = proxy[:dcCreator][:def] unless proxy[:dcCreator].nil?
               doc[:cho_creator_display_tsim] = doc[:cho_creator_tsim]
         
               doc[:cho_contributor_tsim] = proxy[:dcContributor][:def] unless proxy[:dcContributor].nil?
